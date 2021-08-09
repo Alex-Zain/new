@@ -116,12 +116,13 @@ def menu():
 	logo()
 	print"\033[0;97m Hay\033[0;92m " +ngentod
 	print
-	print" \033[0;97m01. Crack dari publik"
-	print" 02. Crack dari followers"
-	print" 03. Crack pencarian nama"
-	print" 04. Cek hasil "
-	print" \033[0;91m00.\033[0;97m Hapus token"
-	pilih_menu()
+        print(" \033[0;97m╔══o00════════00o═════════════════════════╗")
+	print" \033[0;97m(01). Crack from public Id"
+	print" \033[0;97m(02). Crack from followers"
+	print" \033[0;97m(03). Crack name search"
+	print" \033[0;97m(04). Check results "
+	print" \033[0;91m(00).\033[0;97m Remove token"
+	print(" \033[0;97m╚═════════════════════════════════════════╝")	pilih_menu()
 
 def pilih_menu():
 	mi = raw_input("\n\033[0;97m ?: pilih : ")
