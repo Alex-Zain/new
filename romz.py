@@ -206,7 +206,7 @@ def anak_memek():
 	print ("\n\033[0;91m (01). \033[0;92mb-api (fast)")
 	print ("\n\033[0;91m (02). \033[0;92mmbasic (slow)")
 	print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
-	print (""\n\033[0;91m╚══════════════════════════╝")
+	print ("\n\033[0;91m╚══════════════════════════╝")
 	romixyz()
 
 def romixyz():
