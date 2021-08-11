@@ -409,14 +409,10 @@ def langsungbasic():
 				continue
 			else:
 				if len(nama) == 1 and len(nama) == 2 and len(nama) == 3 and len(nama) == 4 or len(nama) == 5 and len(nama) == 6 and len(nama) == 7:
-				        skm.append(nama+"12")
-					skm.append(nama+"123")
+				        skm.append(nama+"123")
 #                                       skm.append(nama+"1234")
 					skm.append(nama+"12345")
-					skm.append(nama+"123456")
-					skm.append(nama+"783")
-					skm.append(nama+"007")
-				else:
+	                             else:
 					skm.append(nama+"12")
 					skm.append(nama+"123")
 					skm.append(nama+"12345")
