@@ -413,9 +413,8 @@ def langsungbasic():
 			if len(nama)<3:
 				continue
 			else:
-				if len(nama) == 1 and len(nama) == 2 and len(nama) == 3 and len(nama) == 4 or len(nama) == 5:
-					skm.append(nama+"123")
-#                 skm.append(nama+"1234")
+				if len(nama) == 1 and len(nama) == 2 and len(nama) == 3 and len(nama) == 4 or len(nama) == 6 and len(nama) == 7 and len(nama) == 8 and len(nama) == 9 and len(nama) == 10 and len(nama) == 11and len(nama) == 12:				skm.append(nama+"123")
+#                                       skm.append(nama+"1234")
 					skm.append(nama+"12345")
 				else:
 					skm.append(nama+"12")
@@ -429,7 +428,6 @@ def langsungbasic():
 					skm.append("223344")
 					skm.append("786786")
 					skm.append("445566")
-					skm.append("778899")
 		try:
 			for pw in skm:
 				ua = random.choice(["NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+","NokiaX2-00/5.0 (08.35) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 (Java; U; en-us; nokiax2-00)","Mozilla/5.0 (Linux; Android 4.1.2; Nokia_X Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.87.90 Mobile Safari/537.36 NokiaBrowser/1.0,gzip(gfe)"])
