@@ -119,7 +119,7 @@ def menu():
 	logo()
 	print"\033[0;97m Name\033[0;92m " +ngentod
 	print
-    print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
+        print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
 	print" \033[0;91m(01). \033[0;92mCrack from public Id"
 	print" \033[0;91m(02). \033[0;92mCrack from followers"
 	print" \033[0;91m(03). \033[0;92mCrack name search"
