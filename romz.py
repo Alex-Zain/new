@@ -119,13 +119,13 @@ def menu():
 	logo()
 	print"\033[0;97m Name\033[0;92m " +ngentod
 	print
-        print(" \033[0;91m╔══o00════════00o═════════════════════════╗")
+        print(" \033[0;91m╔═════════════════════════════════╗")
 	print" \033[0;91m(01). \033[0;92mCrack from public Id"
 	print" \033[0;91m(02). \033[0;92mCrack from followers"
 	print" \033[0;91m(03). \033[0;92mCrack name search"
 	print" \033[0;91m(04). \033[0;92mCheck results "
 	print" \033[0;91m(00). \033[0;92m\033[0;97m Remove token"
-	print(" \033[0;91m╚═════════════════════════════════════════╝")
+	print(" \033[0;91m╚═════════════════════════════════╝")
 	pilih_menu()
 
 def pilih_menu():
@@ -204,12 +204,12 @@ def pilih_menu():
 
 # Tambahan metode nya #
 def anak_memek():
-    print(" \033[0;91m╔═══════════════════════╗")
+        print(" \033[0;91m╔════════════════════════════════╗")
 	print ("\n\033[0;92m [ Select the crack method ] \n")
 	print ("\n\033[0;91m (01). \033[0;92mb-api (fast)")
 	print ("\n\033[0;91m (02). \033[0;92mmbasic (slow)")
 	print ("\n\033[0;91m (03). \033[0;92mmobile (very slow)")
-	print(" \033[0;91m╚════════════════════════╝")
+	print(" \033[0;91m╚════════════════════════════════╝")
 	romixyz()
 
 def romixyz():
